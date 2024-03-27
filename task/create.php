@@ -10,19 +10,22 @@
     <div class="container">
         <h1>Formulier</h1>
 
+        <form action="../backend/tasksController.php" method="POST">
+            <input type="hidden" name="action" value="create">
+
             <div class="form-group">
-                <label for="naam">Jouw naam:</label>
-                <input type="naam" name="naam" id="naam" class="form-input">
+                <label for="naam">Titel:</label>
+                <input type="text" name="titel" id="titel" class="form-input">
             </div>
 
             <div class="form-group">
-                <label for="opdracht">Opdracht naam:</label>
-                <input type="text" name="opdracht" id="opdracht" class="form-input">
+                <label for="opdracht">Afdeling:</label>
+                <input type="text" name="afdeling" id="afdeling" class="form-input">
             </div>
 
             <div class="form-group">
-                <label for="extra">Extra Info?</label>
-                <textarea name="extra" id="extra" class="extra" rows="4"></textarea>
+                <label for="extra">Beschrijving?</label>
+                <textarea name="beschrijving" id="beschrijving" class="form-input" rows="4"></textarea>
             </div>
 
 
