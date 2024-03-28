@@ -224,6 +224,7 @@ button:-moz-focusring,
 
 /**
  * Correct the padding in Firefox.
+ If you use Firefox
  */
 
 fieldset {
@@ -335,7 +336,6 @@ summary {
 /**
  * Add the correct display in IE 10+.
  */
-
 template {
   display: none;
 }
@@ -346,4 +346,5 @@ template {
 
 [hidden] {
   display: none;
+
 }

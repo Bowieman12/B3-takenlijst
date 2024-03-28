@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <a href="create.php">lol</a>
+    <a href="create.php">Nieuwe taak -></a>
     <div class="kanban">
         <table>
             <tr>

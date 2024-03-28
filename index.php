@@ -10,8 +10,7 @@
     
     <div class="container">
         <h1> Hoii hoii, kom je je taken bekijken in onze fantastische online takenlijst! </h1>
-        <a href ="/B/PRA/B3-takenlijst/task/index.php">Hier is je takenlijst</a>
-
+        <a href ="task/index.php">Hier is je takenlijst</a>
     </div>
 
 </body>
