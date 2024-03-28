@@ -5,4 +5,4 @@ $dbName = 'takenlijst';
 $dbUser = 'root';
 $dbPass = '';
 
-$base_url = 'http://localhost/B3-takenlijst';
+$base_url = 'http://localhost/B/PRA/B3-takenlijst/';
