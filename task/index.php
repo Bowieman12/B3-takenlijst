@@ -7,6 +7,15 @@
 
 <body>
     <a href="create.php">lol</a>
+    <div class="kanban">
+        <table>
+            <tr>
+                <th>To Do</th>
+
+            </tr>
+        </table>
+    </div>
+
 </body>
 
 </html>
