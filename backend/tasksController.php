@@ -29,7 +29,7 @@ if($action == 'update'){
     $titel = $_POST['titel'];
     $beschrijving = $_POST['beschrijving'];
     $afdeling = $_POST['afdeling'];
-    $status = $_POST['status']
+    $status = $_POST['status'];
     require_once '../config/conn.php';
 
     $query =    "UPDATE taken 
@@ -42,9 +42,8 @@ if($action == 'update'){
         ":beschrijving"      => $beschrijving,
         ":afdeling"          => $afdeling,
         ":status"            => $status
-
     ]);
-    head("location: ../../../task/index.php?msg=$msg");
+    head("location: ../task/index.php?msg=$msg");
 
 }
 if($action == 'delete'){
@@ -59,6 +58,6 @@ if($action == 'delete'){
     ]);
 
     $msg = "Je melding is verwijderd.";
-    head("location: ../../../task/index.php?msg=$msg");
+    head("location: ../task/index.php?msg=$msg");
 
 }
