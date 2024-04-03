@@ -25,14 +25,16 @@
         ?>
         <table>
             <tr>
-                <th>titel</th>
-                <th>beschrijving</th>
-                <th>status</th>
-                <th>aanpassen</th>
+                <th>Titel</th>
+                <th>Afdeling</th>
+                <th>Beschrijving</th>
+                <th>Status</th>
+                <th>Aanpassen</th>
             </tr>
             <?php foreach($taken as $taak): ?>
                 <tr>
                     <td><p><?php echo $taak['titel']; ?></p></td>
+                    <td><p><?php echo $taak['afdeling']; ?></p></td>
                     <td><p><?php echo $taak['beschrijving']; ?></p></td>
                     <td><p><?php echo $taak['status']; ?></p></td>
                     <td><a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen</a></td>
