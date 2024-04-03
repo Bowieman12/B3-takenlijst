@@ -62,6 +62,6 @@ if($action == 'delete'){
     ]);
 
     $msg = "Je melding is verwijderd.";
-    head("location: ../task/index.php?msg=$msg");
+    header("location: ../task/index.php?msg=$msg");
 
 }

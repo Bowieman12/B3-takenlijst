@@ -75,7 +75,7 @@
 
         <hr>
 
-        <form action="../../../backend/tasksController.php" method="POST">
+        <form action="<?php echo $base_url; ?>/backend/tasksController.php" method="POST">
             <input type="hidden" name="action"value="delete">
             <input type="hidden" name="id"value="<?php echo $id;?>">
             <input type="submit" value="Verwijderen">
