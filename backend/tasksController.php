@@ -7,22 +7,24 @@ if($action == 'create'){
     $titel = $_POST['titel'];
     $beschrijving = $_POST['beschrijving'];
     $afdeling = $_POST['afdeling'];
+    $status = $_POST['status'];
 
     require_once '../config/conn.php';
 
-    $query = "INSERT INTO taken (titel, beschrijving, afdeling)
-    VALUES (:titel, :beschrijving, :afdeling)";
+    $query = "INSERT INTO taken (titel, beschrijving, afdeling, status)
+    VALUES (:titel, :beschrijving, :afdeling, :status)";
 
     $statement = $conn->prepare($query);
-
+    $status = 'To-Do';
     $statement->execute([
     ":titel"             => $titel,
     ":beschrijving"      => $beschrijving,
     ":afdeling"          => $afdeling,
+    ":status"            => $status
     ]);
 
     $msg = "Je melding is verwijderd.";
-    header("location:../../../task/index.php?msg=$msg");
+    header("location: ../task/index.php?msg=$msg");
 
 }
 if($action == 'update'){
@@ -30,6 +32,7 @@ if($action == 'update'){
     $beschrijving = $_POST['beschrijving'];
     $afdeling = $_POST['afdeling'];
     $status = $_POST['status'];
+    $id     = $_POST['id'];
     require_once '../config/conn.php';
 
     $query =    "UPDATE taken 
@@ -41,9 +44,10 @@ if($action == 'update'){
         ":titel"             => $titel,
         ":beschrijving"      => $beschrijving,
         ":afdeling"          => $afdeling,
-        ":status"            => $status
+        ":status"            => $status,
+        ":id"                => $id
     ]);
-    head("location: ../task/index.php?msg=$msg");
+    header("location: ../task/index.php?msg=$msg");
 
 }
 if($action == 'delete'){

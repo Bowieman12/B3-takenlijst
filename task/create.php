@@ -27,6 +27,11 @@
                 <label for="extra">Beschrijving?</label>
                 <textarea name="beschrijving" id="beschrijving" class="form-input" rows="4"></textarea>
             </div>
+            
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <input type="text" name="status" id="status" class="form-input">
+            </div>
 
 
             <input type="submit" value="Verstuur melding">
