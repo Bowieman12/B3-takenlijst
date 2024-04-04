@@ -3,6 +3,25 @@
 
 <head>
     <title>Takenlijst</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #ccc;
+            margin: 20px;
+            float: left;
+        }
+        .item {
+            width: 50px;
+            height: 50px;
+            background-color: #009688;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            margin: 10px;
+            cursor: grab;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,6 +61,38 @@
         </table>
     </div>
 
-</body>
 
+<div class="container" id="container1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <?php $i = 0; ?>
+    <?php foreach($taken as $taak): ?>
+        <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
+            <?php
+                echo $taak['titel'];
+                echo $taak['afdeling'];
+                echo $taak['beschrijving'];
+                echo $taak['status'];
+            ?>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<div class="container" id="container2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<script>
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drag(event) {
+  event.dataTransfer.setData("text", event.target.id);
+}
+
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("text");
+  event.target.appendChild(document.getElementById(data));
+}
+</script>
+
+</body>
 </html>
