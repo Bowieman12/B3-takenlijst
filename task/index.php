@@ -12,7 +12,7 @@
             float: left;
         }
         .item {
-            width: 250px;
+            width: 450px;
             height: 50px;
             background-color: #009688;
             color: #fff;
@@ -56,8 +56,7 @@
             <?php foreach($taken as $taak): ?>
                 <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
                     <?php echo $taak['afdeling']; ?>
-                    <?php echo $taak['beschrijving']; ?>
-                    <?php echo $taak['titel']; ?>
+                    <a href="exempel.php?id=<?php echo $taak['id']; ?>"><?php echo $taak['titel']; ?></a>
                     <a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen </a>
 
                 </div>
