@@ -5,14 +5,14 @@
     <title>Takenlijst</title>
     <style>
         .container {
-            width: 300px;
-            height: 1000px;
+            width: 500px;
+            height: 650px;
             border: 2px solid #ccc;
             margin: 20px;
             float: left;
         }
         .item {
-            width: 400px;
+            width: 250px;
             height: 50px;
             background-color: #009688;
             color: #fff;
@@ -46,48 +46,19 @@
             $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
             
         ?>
-        <table>
-            <tr>
-                <th>Titel</th>
-                <th>Afdeling</th>
-                <th>Beschrijving</th>
-                <th>Status</th>
-                <th>Aanpassen</th>
-            </tr>
-            <?php foreach($taken as $taak): ?>
-                <tr>
-                    <td><p><?php echo $taak['titel']; ?></p></td>
-                    <td><p><?php echo $taak['afdeling']; ?></p></td>
-                    <td><p><?php echo $taak['beschrijving']; ?></p></td>
-                    <td><a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen</a></td>
-                </tr>
-            <?php endforeach; ?>
-        </table>
+
     </div>
 
     <div class="container-placement">
-        <!-- <div class="container" id="container1" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <?php $i = 0; ?> 
-            <?php foreach($taken as $taak): ?>
-                <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
-                    <?php
-                        echo $taak['titel'];
-                        echo $taak['afdeling'];
-                        echo $taak['beschrijving'];
-                    ?>
-                </div>
-            <?php endforeach; ?>
-        </div> -->
-
         <div class="container" id="container1" ondrop="drop(event)" ondragover="allowDrop(event)">
             <?php $i = 0; ?> 
             <?php foreach($taken as $taak): ?>
                 <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
-                    <a href="example.com?id=<?php echo $taak['id']; ?>">
-                        <?php echo $taak['titel']; ?>
-                    </a>
                     <?php echo $taak['afdeling']; ?>
                     <?php echo $taak['beschrijving']; ?>
+                    <?php echo $taak['titel']; ?>
+                    <a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen </a>
+
                 </div>
             <?php endforeach; ?>
         </div>
