@@ -72,6 +72,11 @@
     </div>
 
     <script>
+    // Load item positions from localStorage on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        loadItemPositions();
+    });
+
     function allowDrop(event) {
     event.preventDefault();
     }
@@ -84,8 +89,40 @@
     event.preventDefault();
     var data = event.dataTransfer.getData("text");
     event.target.appendChild(document.getElementById(data));
+    
+    // Save item positions to localStorage after drop
+    saveItemPositions();
+    }
+
+    function saveItemPositions() {
+    var container1 = document.getElementById('container1').innerHTML;
+    var container2 = document.getElementById('container2').innerHTML;
+    var container3 = document.getElementById('container3').innerHTML;
+
+    
+    localStorage.setItem('container1', container1);
+    localStorage.setItem('container2', container2);
+    localStorage.setItem('container3', container3);
+
+    }
+
+    function loadItemPositions() {
+    var container1 = localStorage.getItem('container1');
+    var container2 = localStorage.getItem('container2');
+    var container3 = localStorage.getItem('container3');
+
+    
+    if (container1) {
+        document.getElementById('container1').innerHTML = container1;
+    }
+    if (container2) {
+        document.getElementById('container2').innerHTML = container2;
+    }
+    if (container3) {
+        document.getElementById('container3').innerHTML = container3;
+    }
+
     }
     </script>
-
 </body>
 </html>
