@@ -30,6 +30,7 @@
 </head>
 
 <body>
+    <button onclick="window.location.href = 'login.php';">Go to Login</button>
     <div class="kanban">
     <h1>Taken</h1>
         <a href="create.php">Nieuwe taak &gt;</a>
