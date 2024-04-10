@@ -6,13 +6,13 @@
     <style>
         .container {
             width: 300px;
-            height: 300px;
+            height: 1000px;
             border: 2px solid #ccc;
             margin: 20px;
             float: left;
         }
         .item {
-            width: 50px;
+            width: 400px;
             height: 50px;
             background-color: #009688;
             color: #fff;
@@ -21,6 +21,11 @@
             margin: 10px;
             cursor: grab;
         }
+        .container-placement {
+            display: flex;
+            justify-content: center;
+        }
+
     </style>
 </head>
 
@@ -54,45 +59,62 @@
                     <td><p><?php echo $taak['titel']; ?></p></td>
                     <td><p><?php echo $taak['afdeling']; ?></p></td>
                     <td><p><?php echo $taak['beschrijving']; ?></p></td>
-                    <td><p><?php echo $taak['status']; ?></p></td>
                     <td><a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
     </div>
 
+    <div class="container-placement">
+        <!-- <div class="container" id="container1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <?php $i = 0; ?> 
+            <?php foreach($taken as $taak): ?>
+                <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
+                    <?php
+                        echo $taak['titel'];
+                        echo $taak['afdeling'];
+                        echo $taak['beschrijving'];
+                    ?>
+                </div>
+            <?php endforeach; ?>
+        </div> -->
 
-<div class="container" id="container1" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <?php $i = 0; ?>
-    <?php foreach($taken as $taak): ?>
-        <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
-            <?php
-                echo $taak['titel'];
-                echo $taak['afdeling'];
-                echo $taak['beschrijving'];
-                echo $taak['status'];
-            ?>
+        <div class="container" id="container1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <?php $i = 0; ?> 
+            <?php foreach($taken as $taak): ?>
+                <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
+                    <a href="example.com?id=<?php echo $taak['id']; ?>">
+                        <?php echo $taak['titel']; ?>
+                    </a>
+                    <?php echo $taak['afdeling']; ?>
+                    <?php echo $taak['beschrijving']; ?>
+                </div>
+            <?php endforeach; ?>
         </div>
-    <?php endforeach; ?>
-</div>
+    
 
-<div class="container" id="container2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="container" id="container2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    
 
-<script>
-function allowDrop(event) {
-  event.preventDefault();
-}
+        <div class="container" id="container3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-function drag(event) {
-  event.dataTransfer.setData("text", event.target.id);
-}
+    </div>
 
-function drop(event) {
-  event.preventDefault();
-  var data = event.dataTransfer.getData("text");
-  event.target.appendChild(document.getElementById(data));
-}
-</script>
+    <script>
+    function allowDrop(event) {
+    event.preventDefault();
+    }
+
+    function drag(event) {
+    event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    event.target.appendChild(document.getElementById(data));
+    }
+    </script>
 
 </body>
 </html>
