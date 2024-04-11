@@ -46,7 +46,6 @@
             $statement = $conn->prepare($query);
             $statement->execute();
             $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
-            
         ?>
 
     </div>
@@ -59,7 +58,6 @@
                     <?php echo $taak['afdeling']; ?>
                     <a href="exempel.php?id=<?php echo $taak['id']; ?>"><?php echo $taak['titel']; ?></a>
                     <a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen </a>
-
                 </div>
             <?php endforeach; ?>
         </div>
@@ -72,58 +70,40 @@
 
     </div>
 
-    <script>
-    // Load item positions from localStorage on page load
-    document.addEventListener('DOMContentLoaded', function() {
-        loadItemPositions();
-    });
-
+<script>
     function allowDrop(event) {
-    event.preventDefault();
+        event.preventDefault();
     }
 
     function drag(event) {
-    event.dataTransfer.setData("text", event.target.id);
+        event.dataTransfer.setData("text", event.target.id);
     }
 
     function drop(event) {
-    event.preventDefault();
-    var data = event.dataTransfer.getData("text");
-    event.target.appendChild(document.getElementById(data));
-    
-    // Save item positions to localStorage after drop
-    saveItemPositions();
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        var draggedItem = document.getElementById(data);
+        var destinationContainer = event.target;
+
+        // Append the dragged item to the destination container
+        destinationContainer.appendChild(draggedItem);
+        
+        // Save item positions within containers
+        saveItemPositions();
     }
 
     function saveItemPositions() {
-    var container1 = document.getElementById('container1').innerHTML;
-    var container2 = document.getElementById('container2').innerHTML;
-    var container3 = document.getElementById('container3').innerHTML;
+        var container1Items = document.getElementById('container1').innerHTML;
+        var container2Items = document.getElementById('container2').innerHTML;
+        var container3Items = document.getElementById('container3').innerHTML;
 
-    
-    localStorage.setItem('container1', container1);
-    localStorage.setItem('container2', container2);
-    localStorage.setItem('container3', container3);
-
+        // Here you can perform any action to save the items within containers,
+        // such as sending them to the server for processing or updating a database.
+        // For this example, let's just log the items for demonstration.
+        console.log("Container 1 items:", container1Items);
+        console.log("Container 2 items:", container2Items);
+        console.log("Container 3 items:", container3Items);
     }
-
-    function loadItemPositions() {
-    var container1 = localStorage.getItem('container1');
-    var container2 = localStorage.getItem('container2');
-    var container3 = localStorage.getItem('container3');
-
-    
-    if (container1) {
-        document.getElementById('container1').innerHTML = container1;
-    }
-    if (container2) {
-        document.getElementById('container2').innerHTML = container2;
-    }
-    if (container3) {
-        document.getElementById('container3').innerHTML = container3;
-    }
-
-    }
-    </script>
+</script>
 </body>
 </html>
