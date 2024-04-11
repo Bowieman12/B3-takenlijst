@@ -65,3 +65,22 @@ if($action == 'delete'){
     header("location: ../task/index.php?msg=$msg");
 
 }
+if($action == 'signup'){
+    $naam = $_POST['naam'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    require_once '../config/conn.php';
+
+    $query = "INSERT INTO users (naam, username, password)
+    VALUES (:naam, :username, :password)";
+
+    $statement = $conn->prepare($query);
+    $statement->execute([
+    ":naam"             => $naam,
+    ":username"      => $username,
+    ":password"          => $password
+    ]);
+    header("location: ../task/index.php");
+
+}
