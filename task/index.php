@@ -3,6 +3,7 @@
 
 <head>
     <title>Takenlijst</title>
+    <?php require_once '../head.php'; ?>
     <style>
         .container {
             width: 500px;
