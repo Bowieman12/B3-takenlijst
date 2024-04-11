@@ -101,8 +101,30 @@ header{
   background-color: #5D7599;
   ;
 }
-header a {
-  color: #ABB6C8;
+.main-logo {
+  display: flex;
+  justify-content: space-around;
+}
+nav{
+  text-align: center;
+}
+.nav-wrapper {
+ padding: 20px;
+}
+header a{
+  border: solid 4px #ABB6C8;
+  border-radius: 15px;
+  background-color: #DADADA;
+  color: #5D7599;
+  font-weight: 700;
+  text-decoration: none ;
+  padding: 10px 10px;
+  margin: 20px;
+  box-shadow: 10px 10px;
+}
+
+main{
+  background-color: #DADADA ;
 }
 
 .container{
