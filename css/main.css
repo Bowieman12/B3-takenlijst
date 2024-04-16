@@ -112,7 +112,7 @@ nav{
 .nav-wrapper {
  padding: 20px;
 }
-header a{
+.nav-wrapper a{
   border: solid 4px #ABB6C8;
   border-radius: 15px;
   background-color: #DADADA;
