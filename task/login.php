@@ -66,7 +66,10 @@
             }
 
         ?>
-        <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+        <p>Nog geen account?</p>
+        <div class="signup-href">
+        <a href ="signup.php">Maak uw persoonlijke account!</a>
+        </div>
     </div>
 
 </body>
