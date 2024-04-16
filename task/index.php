@@ -12,7 +12,6 @@
     </header>
 
     <main>
-        <button onclick="window.location.href = 'logout.php';">Logout</button>
         <div class="kanban">
         <h1>Taken</h1>
             <a href="create.php">Nieuwe taak &gt;</a>
