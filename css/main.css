@@ -137,17 +137,21 @@ main{
 .container-index {
   width: 500px;
   height: 650px;
-  border: 2px solid #ccc;
+  background-color: #ABB6C8;
+  border: solid 4px #5D7599;
+  border-radius: 15px;  
   margin: 20px;
   float: left;
 }
 .item {
   width: 450px;
   height: 50px;
-  background-color: #009688;
-  color: #fff;
+  background-color: #5D7599;
+  color: #DADADA;
   text-align: center;
   line-height: 50px;
+  border: solid 4px #5D7599;
+  border-radius: 15px;  
   margin: 10px;
   cursor: grab;
 }
