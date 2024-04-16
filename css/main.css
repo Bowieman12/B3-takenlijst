@@ -97,6 +97,7 @@ body{
   font-style: normal;
   background-color: #DADADA;
 }
+/* =========================================================HEADER======================================================= */
 header{
   background-color: #5D7599;
   ;
@@ -122,6 +123,7 @@ header a{
   margin: 20px;
   box-shadow: 10px 10px;
 }
+/* =========================================================MAIN======================================================= */
 
 main{
   background-color: #DADADA ;
@@ -131,6 +133,29 @@ main{
     max-width: 1024px;
     margin: 0 auto;
 }
+/* =========================================================TASKS-INDEX======================================================= */
+.container-index {
+  width: 500px;
+  height: 650px;
+  border: 2px solid #ccc;
+  margin: 20px;
+  float: left;
+}
+.item {
+  width: 450px;
+  height: 50px;
+  background-color: #009688;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  margin: 10px;
+  cursor: grab;
+}
+.container-placement {
+  display: flex;
+  justify-content: center;
+}
+/* =========================================================FORM======================================================= */
 
 .form-group{
     margin: 1rem 0;
