@@ -7,12 +7,12 @@ if($action == 'create'){
     $titel = $_POST['titel'];
     $beschrijving = $_POST['beschrijving'];
     $afdeling = $_POST['afdeling'];
-    $status = $_POST['status'];
+    $status = $_POST['deadline'];
 
     require_once '../config/conn.php';
 
-    $query = "INSERT INTO taken (titel, beschrijving, afdeling, status)
-    VALUES (:titel, :beschrijving, :afdeling, :status)";
+    $query = "INSERT INTO taken (titel, beschrijving, afdeling, deadline)
+    VALUES (:titel, :beschrijving, :afdeling, :deadline)";
 
     $statement = $conn->prepare($query);
     $status = 'To-Do';
@@ -20,7 +20,7 @@ if($action == 'create'){
     ":titel"             => $titel,
     ":beschrijving"      => $beschrijving,
     ":afdeling"          => $afdeling,
-    ":status"            => $status
+    ":deadline"            => $deadline
     ]);
 
     $msg = "Je melding is verwijderd.";
