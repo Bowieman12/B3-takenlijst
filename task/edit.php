@@ -51,28 +51,20 @@
                     <label for="titel">Titel:  </label>
                     <input type="text" name="titel" id="titel" class="form-input" value="<?php echo ($taak['titel']);?>">
                 </div>
+
                 <div class="form-group">
                     <label for="beschrijving">beschrijving: </label>
                     <textarea name="beschrijving" id="beschrijving" class="form-input" rows="4" ><?php echo $taak['beschrijving']?></textarea>   
-                </div>beschrijving
+                </div>
+
                 <div class="form-group"> 
                     <label for="afdeling">afdeling: </label>
                     <input type="text" name="afdeling" id="afdeling" class="form-input" value="<?php echo ($taak['afdeling']);?>">
                 </div>
+
                 <div class="form-group"> 
-                    <label for="status">status: </label>
-                    <select name="status" id="status" class="form-input">
-                        <?php
-                        $status_options = array("To-Do", "Doing", "Done");
-                        foreach ($status_options as $option) {
-                            if ($option == $taak['status']) {
-                                echo "<option value=\"$option\" selected>$option</option>";
-                            } else {
-                                echo "<option value=\"$option\">$option</option>";
-                            }
-                        }
-                        ?>
-                    </select>           
+                    <label for="status">deadline: </label>
+                    <input type="date" name="deadline" id="deadline" class="form-input">          
                 </div>
                 <input type="submit" value="taak opslaan">
 

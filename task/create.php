@@ -30,8 +30,8 @@
             </div>
             
             <div class="form-group">
-                <label for="status">Deadline:</label>
-                <input type="text" name="deadline" id="deadline" class="form-input">
+                <label for="deadline">Deadline:</label>
+                <input type="date" name="deadline" id="deadline" class="form-input">
             </div>
 
             <input type="submit" value="Verstuur melding">

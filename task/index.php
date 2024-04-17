@@ -22,7 +22,7 @@
 
             <?php
                 require_once '../config/conn.php';
-                $query  = "SELECT * FROM taken";
+                $query  = "SELECT * FROM taken ORDER BY deadline ASC";
                 $statement = $conn->prepare($query);
                 $statement->execute();
                 $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -35,8 +35,9 @@
                 <?php $i = 0; ?> 
                 <?php foreach($taken as $taak): ?>
                     <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
-                        <?php echo $taak['afdeling']; ?>
                         <a href="exempel.php?id=<?php echo $taak['id']; ?>"><?php echo $taak['titel']; ?></a>
+                        <?php echo $taak['afdeling']; ?>
+                        <?php echo $taak['deadline']; ?>
                         <a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen </a>
                     </div>
                 <?php endforeach; ?>
@@ -85,6 +86,7 @@
         console.log("Container 2 items:", container2Items);
         console.log("Container 3 items:", container3Items);
     }
+
 </script>
 </body>
 </html>
