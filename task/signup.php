@@ -16,9 +16,6 @@
         <form action="../backend/tasksController.php" method="POST">
             <input type="hidden" name="action" value="signup">
 
-            <label for="naam">Naam: </label>
-            <input type="text" id="naam" name="naam" required>
-            <br><br>
             <label for="username">Username: </label>
             <input type="text" id="username" name="username" required>
             <br><br>
