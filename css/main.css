@@ -99,7 +99,7 @@ body{
 }
 /* =========================================================HEADER======================================================= */
 header{
-  background-color: #5D7599;
+  background-color: #5D7599; 
   ;
 }
 .main-logo {
@@ -132,6 +132,7 @@ main{
 .container{
     max-width: 1024px;
     margin: 0 auto;
+    text-align: center;
 }
 /* =========================================================TASKS-INDEX======================================================= */
 .container-index {
@@ -351,3 +352,21 @@ label{
   }
 }
 
+/* ====================== HOMEPAGE INFORMATIE OVER ONS ====================== */
+
+.blok{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  background-color: #5D7599;
+  padding: 10px;
+  text-align: center;
+  border-radius: 15px;
+  
+}
+.blok-persoon{
+  padding: 15px;
+  background-color: #98b1d0;
+  border-radius: 15px;
+  margin: 10px;
+}
