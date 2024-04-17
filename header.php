@@ -3,6 +3,7 @@
 <header class="connection-header">
     <div class="main-logo">
         <img src = "<?php echo $base_url; ?>logo-big-v4.png" alt="Logo website">
+        
     </div>
 </div>
 <header class="connection-header">

@@ -1,5 +1,11 @@
 <?php
-
+session_start();
+if(!isset($_SESSION['user_id']))
+{
+    $msg = "je moet eerst inloggen!";
+    header("location: login.php?msg=$msg")
+    exit;
+}
 $action = $_POST['action'];
 echo $action;
 
@@ -66,18 +72,16 @@ if($action == 'delete'){
 
 }
 if($action == 'signup'){
-    $naam = $_POST['naam'];
     $username = $_POST['username'];
     $password = $_POST['password'];
 
     require_once '../config/conn.php';
 
-    $query = "INSERT INTO users (naam, username, password)
-    VALUES (:naam, :username, :password)";
+    $query = "INSERT INTO users (username, password)
+    VALUES (:username, :password)";
 
     $statement = $conn->prepare($query);
     $statement->execute([
-    ":naam"             => $naam,
     ":username"      => $username,
     ":password"          => $password
     ]);
