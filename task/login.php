@@ -12,9 +12,13 @@
 </head>
 
 <body>
-    <header>
-        <h1>Inloggen</h1>
-    </header>
+    <div class="header-h1">
+        <header>
+            <div class="inlog-h1">
+                <h1>Inloggen</h1>
+            </div>
+        </header>
+    </div>
 
 
     <div class="blok-inlog">

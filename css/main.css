@@ -100,7 +100,6 @@ body{
 /* =========================================================HEADER======================================================= */
 header{
   background-color: #5D7599; 
-  ;
 }
 .main-logo {
   display: flex;
@@ -395,4 +394,14 @@ label{
   margin: 10px;
 }
 
-#5D7599
+.inlog-h1{
+  text-align: center;
+}
+
+.header-h1{
+  margin-inline: 400px;
+  background-color: #5D7599; 
+  border-radius: 15px;
+  padding: 1px;
+  margin-top: 25px;
+}
