@@ -16,18 +16,27 @@
         <h1>Inloggen</h1>
     </header>
 
-    <?php
-        require_once '../head.php'; ?>
-    <div class="container home">
-    <form action="../backend/loginController.php" method="POST">
-        <input type="text" name="username" placeholder="user">
-        <input type="password" name="password" placeholder="pass">
-        <input type="submit" value="Submit">
-    </form>
 
-        <p>Nog geen account?</p>
-        <div class="signup-href">
-        <a href ="signup.php">Maak uw persoonlijke account!</a>
+    <div class="blok-inlog">
+        <?php
+            require_once '../head.php'; ?>
+        <div class="container home">
+        <form action="../backend/loginController.php" method="POST">
+            <div class="user-pass">
+                <input type="text" name="username" placeholder="user">
+                <input type="password" name="password" placeholder="pass">
+            </div>
+            <div class="submit-inlog">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+            <div class="p-login">
+                <p>Nog geen account?</p>
+            </div>
+            <div class="signup-href">
+            <a href ="signup.php">Maak uw persoonlijke account!</a>
+            </div>
         </div>
     </div>
 

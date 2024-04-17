@@ -370,3 +370,29 @@ label{
   border-radius: 15px;
   margin: 10px;
 }
+
+/* ====================== INLOG PAGINA ====================== */
+
+.blok-inlog{
+  padding: 50px;
+  background-color: #98b1d0;
+  border-radius: 15px;
+  margin: 50px;
+  margin-inline: 500px;
+}
+
+.user-pass input{
+  background-color: #5D7599 ;
+}
+.user-pass ::placeholder{
+  color: #ABB6C8;
+}
+.p-login{
+  color: #5D7599;
+}
+
+.submit-inlog{
+  margin: 10px;
+}
+
+#5D7599
