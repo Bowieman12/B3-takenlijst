@@ -23,6 +23,7 @@
     <main>
         <div class="kanban">
             <a href="create.php">Nieuwe taak &gt;</a>
+            
             <?php if(isset($_GET['msg']))
             { 
                 echo "<div class='msg'>" . $_GET['msg'] . "</div>";
@@ -35,8 +36,21 @@
                 $statement->execute();
                 $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
             ?>
-
+            <form action="../backend/filter.php" method="POST">
+                <select  name="afdeling" id="afdeling">
+                    <option value="">-ALLE-</option>
+                    <option value="Personeel">-Personeel-</option>
+                    <option value="Horeca">-Horeca-</option>
+                    <option value="Techniek">-Techniek-</option>
+                    <option value="Inkoop">-Inkoop-</option>
+                    <option value="Groen">-Groen-</option>
+                    <option value="Klateservice">-Klateservice-</option>
+                </select>
+                <input type="submit" value="filter">
+            </form>
         </div>
+
+
 
         <div class="taken-h1">
             <h1>To-Do</h1>
@@ -50,7 +64,13 @@
                 <?php foreach($taken as $taak): ?>
                     <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
                         <a href="exempel.php?id=<?php echo $taak['id']; ?>"><?php echo $taak['titel']; ?></a>
-                        <?php echo $taak['afdeling']; ?>
+                        <?php echo $taak['afdeling']; 
+                        if($taak['afdeling'] == 'Personeel' ){
+                            
+                        }
+                        
+                        ?>
+                        
                         <?php echo $taak['deadline']; ?>
                         <a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen </a>
                     </div>

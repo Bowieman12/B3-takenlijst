@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="nl">
+<?php
+    require_once '../config/conn.php';
 
-<head>
-<?php require_once '../head.php'; 
-  session_start();
-  if(!isset($_SESSION['user_id']))
-  {
-    $msg = "je moet eerst inloggen!";
-    header("location: login.php?msg=$msg");
-    exit;
-  }
-?>
-</head>
-<body>
-  <header>
-    <?php require_once '../header.php'; ?>
-  </header>
+    $afdeling = $_POST['afdeling'];
 
-  <main>
-    
-  </main>
-</body>
-</html>
+    $query  = "SELECT * FROM taken WHERE afdeling = :afdeling";
+    $statement = $conn->prepare($query);
+    $statement->execute([
+        ":afdeling" => $afdeling
+    ]);
+    $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+    // header("location: ../task/index.php?");
+
+ ?>
