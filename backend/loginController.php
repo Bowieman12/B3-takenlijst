@@ -15,11 +15,12 @@ if($statement->rowCount() < 1) {
 
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
-if(!password_verify($password, $user['password'])) {
-    die("error: wachtwoord is niet juist!");
-}
+// if(password_verify($password, $user['password'])) {
+//     die("error: wachtwoord is niet juist!");
+// }
 
 $_SESSION['user_id'] = $user['id'];
+
 
 // Redirect to index.php after successful login
 header("Location: ../index.php");

@@ -22,7 +22,6 @@
 
     <main>
         <div class="kanban">
-        <h1>Taken</h1>
             <a href="create.php">Nieuwe taak &gt;</a>
             <?php if(isset($_GET['msg']))
             { 
@@ -38,6 +37,12 @@
             ?>
 
         </div>
+
+        <div class="taken-h1">
+            <h1>To-Do</h1>
+            <h1>Doing</h1>
+            <h1>Done</h1>
+        </div> 
 
         <div class="container-placement">
             <div class="container-index" id="container1" ondrop="drop(event)" ondragover="allowDrop(event)">

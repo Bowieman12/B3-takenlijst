@@ -28,10 +28,19 @@
             </div>
 
             <div class="form-group">
-                <label for="opdracht">Afdeling:</label>
-                <input type="text" name="afdeling" id="afdeling" class="form-input">
-            </div>
+                <label for="afdeling">Afdeling:</label>
+                <select  name="afdeling" id="afdeling">
+                    <option value="">-Maak een keuzen-</option>
+                    <option value="Personeel">Personeel</option>
+                    <option value="Horeca">Horeca</option>
+                    <option value="Techniek">Techniek</option>
+                    <option value="Inkoop">Inkoop</option>
+                    <option value="Groen">Groen</option>
+                    <option value="Klateservice">Klateservice</option>
 
+                </select> 
+            </div>
+            
             <div class="form-group">
                 <label for="extra">Beschrijving?</label>
                 <textarea name="beschrijving" id="beschrijving" class="form-input" rows="4"></textarea>

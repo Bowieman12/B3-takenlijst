@@ -405,3 +405,8 @@ label{
   padding: 1px;
   margin-top: 25px;
 }
+
+.taken-h1{
+  display: flex;
+  justify-content: space-around;
+}
