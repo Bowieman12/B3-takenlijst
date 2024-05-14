@@ -31,12 +31,24 @@
 
             <?php
                 require_once '../config/conn.php';
-                $query  = "SELECT * FROM taken ORDER BY deadline ASC";
-                $statement = $conn->prepare($query);
-                $statement->execute();
-                $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
+ 
+                if (empty($_POST['afdeling']))
+                {
+                    $query  = "SELECT * FROM taken ORDER BY deadline ASC";
+                    $statement = $conn->prepare($query);
+                    $statement->execute();
+                    $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
+                } else {
+                    $query  = "SELECT * FROM taken WHERE afdeling = :afdeling ORDER BY deadline ASC";
+                    $statement = $conn->prepare($query);
+                    $statement->execute([
+                        ":afdeling" => $_POST['afdeling']
+                    ]);
+                    $taken = $statement->fetchAll(PDO::FETCH_ASSOC);
+                }
             ?>
-            <form action="../backend/filter.php" method="POST">
+                        
+            <form action="<?php echo $base_url; ?>task/index.php" method="POST">                
                 <select  name="afdeling" id="afdeling">
                     <option value="">-ALLE-</option>
                     <option value="Personeel">-Personeel-</option>
@@ -64,13 +76,7 @@
                 <?php foreach($taken as $taak): ?>
                     <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
                         <a href="exempel.php?id=<?php echo $taak['id']; ?>"><?php echo $taak['titel']; ?></a>
-                        <?php echo $taak['afdeling']; 
-                        if($taak['afdeling'] == 'Personeel' ){
-                            
-                        }
-                        
-                        ?>
-                        
+                        <?php echo $taak['afdeling'];?>
                         <?php echo $taak['deadline']; ?>
                         <a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen </a>
                     </div>
