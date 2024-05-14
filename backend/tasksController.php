@@ -29,7 +29,7 @@ if($action == 'create'){
     ":deadline"            => $deadline
     ]);
 
-    $msg = "Je melding is verwijderd.";
+    $msg = "Je taak is gecreëerd.";
     header("location: ../task/index.php?msg=$msg");
 
 }
