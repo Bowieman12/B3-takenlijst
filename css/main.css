@@ -416,6 +416,9 @@ label{
   display: flex;
   justify-content: space-around;
   font-family: Arial;
+  background-color: #83a0cc;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 /* ====================== INLOG PAGINA ====================== */
