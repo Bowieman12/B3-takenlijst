@@ -75,7 +75,7 @@
                 <?php $i = 0; ?> 
                 <?php foreach($taken as $taak): ?>
                     <div class="item" id="item<?php echo $i++; ?>" draggable="true" ondragstart="drag(event)">
-                        <a href="exempel.php?id=<?php echo $taak['id']; ?>"><?php echo $taak['titel']; ?></a>
+                        <a href="../taken.php?id=<?php echo $taak['id']; ?>"><?php echo $taak['titel']; ?></a>
                         <?php echo $taak['afdeling'];?>
                         <?php echo $taak['deadline']; ?>
                         <a href="edit.php?id=<?php echo $taak['id']; ?>">aanpassen </a>

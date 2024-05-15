@@ -410,3 +410,11 @@ label{
   display: flex;
   justify-content: space-around;
 }
+.container2{
+  max-width: 1024px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  font-family: Arial;
+}
