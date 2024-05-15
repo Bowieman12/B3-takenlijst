@@ -120,7 +120,6 @@ nav{
   text-decoration: none ;
   padding: 10px 10px;
   margin: 20px;
-  box-shadow: 10px 10px;
 }
 /* =========================================================MAIN======================================================= */
 
@@ -417,4 +416,14 @@ label{
   display: flex;
   justify-content: space-around;
   font-family: Arial;
+  background-color: #83a0cc;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* ====================== INLOG PAGINA ====================== */
+.kanban{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
