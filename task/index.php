@@ -12,6 +12,7 @@
         header("location: login.php?msg=$msg");
         exit;
     }
+    $user_id = $_SESSION['user_id']; // Get the user ID from the session
     ?>
 </head>
 
@@ -62,13 +63,14 @@
             </form>
         </div>
 
-
-
         <div class="taken-h1">
             <h1>To-Do</h1>
             <h1>Doing</h1>
             <h1>Done</h1>
         </div> 
+        <div class="taken-h1">
+            <a href="my.php?id=<?php echo $user_id; ?>">Mijn taken &gt;</a> <!-- Corrected link -->
+        </div>
 
         <div class="container-placement">
             <div class="container-index" id="container1" ondrop="drop(event)" ondragover="allowDrop(event)">
