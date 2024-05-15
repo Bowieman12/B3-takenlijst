@@ -13,6 +13,7 @@
             <a href="<?php echo $base_url; ?>task/index.php">Takenlijst</a>
             <a href="<?php echo $base_url; ?>task/login.php">Inloggen</a>
             <a href="<?php echo $base_url; ?>task/logout.php">Uitloggen</a>
+            <a href="<?php echo $base_url; ?>task/register.php">registreren</a>
         </div>
     </nav>
 </div>

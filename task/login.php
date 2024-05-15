@@ -16,6 +16,7 @@
         <header>
             <div class="inlog-h1">
                 <h1>Inloggen</h1>
+
             </div>
         </header>
     </div>
@@ -39,7 +40,7 @@
                 <p>Nog geen account?</p>
             </div>
             <div class="signup-href">
-            <a href ="signup.php">Maak uw persoonlijke account!</a>
+            <a href ="register.php">Maak uw persoonlijke account!</a>
             </div>
         </div>
     </div>
