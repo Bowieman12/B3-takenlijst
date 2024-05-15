@@ -7,7 +7,7 @@
           session_start();
           if(!isset($_SESSION['user_id']))
           {
-            $msg = "je moet eerst inloggen!";
+            $msg = "Je moet eerst inloggen!";
             header("location: login.php?msg=$msg");
             exit;
           }
@@ -22,6 +22,8 @@
         <form action="../backend/tasksController.php" method="POST">
             <input type="hidden" name="action" value="create">
 
+            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+
             <div class="form-group">
                 <label for="naam">Titel:</label>
                 <input type="text" name="titel" id="titel" class="form-input">
@@ -29,20 +31,19 @@
 
             <div class="form-group">
                 <label for="afdeling">Afdeling:</label>
-                <select  name="afdeling" id="afdeling">
-                    <option value="">-Maak een keuzen-</option>
+                <select name="afdeling" id="afdeling">
+                    <option value="">-Maak een keuze-</option>
                     <option value="Personeel">Personeel</option>
                     <option value="Horeca">Horeca</option>
                     <option value="Techniek">Techniek</option>
                     <option value="Inkoop">Inkoop</option>
                     <option value="Groen">Groen</option>
                     <option value="Klateservice">Klateservice</option>
-
                 </select> 
             </div>
             
             <div class="form-group">
-                <label for="extra">Beschrijving?</label>
+                <label for="extra">Beschrijving:</label>
                 <textarea name="beschrijving" id="beschrijving" class="form-input" rows="4"></textarea>
             </div>
             
